@@ -17,5 +17,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Specify the command to run when the container starts
-#CMD ["python", "youtube_video_summary.py"]
+#CMD ["python", "yt_summarizer/youtube_video_summary.py"]
 

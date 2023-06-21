@@ -1,0 +1,15 @@
+from setuptools import setup
+
+setup(
+    name='yt_summarizer',
+    version='0.0.3',
+    author='Isaac Duong',
+    author_email='isaaacduong@gmail.com',
+    license='MIT',    
+    url='https://github.com/isaacduong/youtube_summarizer'
+    description=("Python script to extract video transcripts " 
+                 "based on the video id, and summarize the " 
+                 "text content using the GPT-3.5 Turbo model."),
+    packages=['yt_summarizer'],
+   
+)
