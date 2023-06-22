@@ -1,8 +1,11 @@
 from setuptools import setup
 
+with open("README.md", "r", encoding = "utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name='yt_summarizer',
-    version='0.0.3',
+    version='0.0.4',
     author='Isaac Duong',
     author_email='isaaacduong@gmail.com',
     license='MIT',    
@@ -10,6 +13,8 @@ setup(
     description=("Python script to extract video transcripts " 
                  "based on the video id, and summarize the " 
                  "text content using the GPT-3.5 Turbo model."),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=['yt_summarizer'],
    
 )
