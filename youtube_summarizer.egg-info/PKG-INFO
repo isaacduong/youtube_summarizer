@@ -1,6 +1,0 @@
-Metadata-Version: 2.1
-Name: youtube-summarizer
-Version: 0.0.2
-Summary: Python script to extract video transcriptsbased on the video id, and summarize thetext content using the GPT-3.5 Turbo model
-Author: Isaac Duong
-Author-email: isaaacduong@gmail.com
