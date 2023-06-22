@@ -41,4 +41,19 @@ opportunities.
 
 ## usage 
 you have to pass your Youtube API Key and OpenAI API Key as parameters to the YouTubeVideoSummarizer constructor as following
-downloader = YouTubeVideoSummarizer(your Youtube API Key, your OpenAI API Key)
+
+summarizer = YouTubeVideoSummarizer(your Youtube API Key, your OpenAI API Key) 
+
+then 
+transcript = summarizer.get_transcript(video_id)
+
+and afterwards call 
+summary = summarizer.summarize_text(transcript)
+
+and if you want to save it to a file ( text or audio file ) 
+
+summarizer.write_to_textfile(video_id,summary)
+or
+summarizer.convert_to_audio(summary)
+
+
