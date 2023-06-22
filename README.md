@@ -8,29 +8,26 @@ Summaries of videos spoken in all other languages will be in English.
 
 Summarizing long YouTube videos and interesting videos which have high number of viewers in different languages can offer several advantages:
 
-1. Time-saving: Summaries provide a concise overview of the video's content, allowing viewers to quickly grasp the main points without 
+- Time-saving: Summaries provide a concise overview of the video's content, allowing viewers to quickly grasp the main points without 
 spending significant time watching the entire video. This is particularly beneficial for busy individuals who want to extract key 
 information efficiently.
 
-2. Enhanced accessibility: Videos in different languages may have a language barrier for viewers who don't understand the spoken 
+- Enhanced accessibility: Videos in different languages may have a language barrier for viewers who don't understand the spoken 
 language. Summarizing these videos can help bridge the gap by providing a summarized version in a language that viewers understand, 
 making the content more accessible and inclusive.
 
-3. Improved comprehension: Some videos, especially those covering complex or technical topics, may be challenging to understand fully. 
+- Improved comprehension: Some videos, especially those covering complex or technical topics, may be challenging to understand fully. 
 Summaries provide a simplified version of the content, breaking it down into key ideas and concepts. This aids comprehension, ensuring 
 that viewers grasp the essential information.
 
-4. Multilingual support: YouTube is a global platform with a diverse audience. Summarizing videos in different languages caters to 
+- Multilingual support: YouTube is a global platform with a diverse audience. Summarizing videos in different languages caters to 
 viewers from various language backgrounds, enabling them to access and understand the content better. This expands the reach and impact 
 of the video, reaching a wider audience.
 
-5. Content curation: Summarizing popular videos with a high number of viewers helps curate and highlight the most relevant information. 
+- Content curation: Summarizing popular videos with a high number of viewers helps curate and highlight the most relevant information. 
 By distilling the main points, viewers can quickly evaluate whether the video aligns with their interests or needs. This can save time 
 for viewers who are exploring multiple videos within a particular topic.
 
-6. Knowledge sharing: Summaries can be shared across platforms, such as social media or educational websites, allowing viewers to 
-benefit from the insights and information without requiring them to watch the entire video. This facilitates knowledge sharing and 
-makes it easier for individuals to engage in discussions or reference the video's key points.
 
 Overall, summarizing long YouTube videos and interesting videos with a high number of viewers in different languages offers time-saving 
 benefits, accessibility improvements, enhanced comprehension, multilingual support, content curation, and knowledge sharing 
