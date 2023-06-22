@@ -1,4 +1,4 @@
 .vscode
 .yt_sum_env/
-dist
-youtube_summarizer.egg-info
+dist/
+youtube_summarizer.egg-info/
