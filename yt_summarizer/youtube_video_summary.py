@@ -141,20 +141,20 @@ class YouTubeVideoSummarizer:
             if video_lang is not None:
                 langs = list(set([language, video_lang, self.video_lang(video_id)] ))
             logging.warning(langs)
-            for lang in langs:
+            for i,lang in enumerate(langs):
                 try:
                     transcript = transcript_list.find_manually_created_transcript([lang])
-                    return self.video_lang(video_id), '.'.join(section['text'] for section in transcript.fetch())
+                    return '.'.join(section['text'] for section in transcript.fetch()), self.video_lang(video_id)
                 
                 except NoTranscriptFound as e:
                     
                     try:
                         transcript = transcript_list.find_generated_transcript([lang])
                         logging.info(f'Auto-generiert transcript.')
-                        return self.video_lang(video_id),'.'.join(section['text'] for section in transcript.fetch())  
+                        return '.'.join(section['text'] for section in transcript.fetch()) , self.video_lang(video_id) 
                     except NoTranscriptFound as e:
                         
-                        logging.warning(f'failed to retrieve transcript in {lang}. Try to retrieve transcript in {set(langs).difference(set(lang))}')
+                        logging.warning(f'failed to retrieve transcript in {lang}. Try to retrieve transcript in {langs[i+1:]}')
                         continue
                 except Exception as e:
         
@@ -237,7 +237,7 @@ class YouTubeVideoSummarizer:
         openai.api_key = self.openai_api_key
     
         content = "Du bist ein hilfreicher Assistent, der Texte zusammenfasst" if lang =="de" \
-                else "You are a helpful assistant that summarizes text."
+                else "You are a helpful assistant that summarizes text. Try your best to summarize"
         
         # reduce number of tokens when reaching token limit 
         for token_lim in range(2000,0,-500):
@@ -266,7 +266,7 @@ class YouTubeVideoSummarizer:
                     summarizes.append(summarize)
                    
                 except Exception as e:
-                    logging.warning(e)
+                    logging.warning("please wait, reducing text for summarizing ")
                     break
                     
                 
@@ -303,7 +303,7 @@ if __name__ == "__main__":
     
     video_id = input("Youtube Video ID: ") # video_id is the characters after v= inside the link such as https://www.youtube.com/watch?v=cupU_lyNY2w
     downloader = YouTubeVideoSummarizer()
-    lang, text = downloader.get_transcript(video_id)
+    text,lang  = downloader.get_transcript(video_id)
     if text:
         summarized_text = downloader.summarize_text(text,lang, max_tokens = 200)
         print(summarized_text)

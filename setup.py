@@ -5,7 +5,7 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 
 setup(
     name='yt_summarizer',
-    version='0.1.2',
+    version='0.1.4',
     author='Isaac Duong',
     author_email='isaaacduong@gmail.com',
     license='MIT',    
