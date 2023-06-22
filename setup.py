@@ -5,7 +5,7 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 
 setup(
     name='yt_summarizer',
-    version='1.0.0',
+    version='0.1.1',
     author='Isaac Duong',
     author_email='isaaacduong@gmail.com',
     license='MIT',    
@@ -16,5 +16,14 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['yt_summarizer'],
+    install_requires=[            # I get to this in a second
+          'googleapiclient',
+          'youtube_transcript_api',
+          'openai',
+          'tqdm',
+          'nltk',
+          'gtts',
+          'langdetect',
+      ],
    
 )
