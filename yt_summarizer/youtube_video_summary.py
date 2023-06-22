@@ -128,6 +128,7 @@ class YouTubeVideoSummarizer:
         - video_id (str): The ID of the YouTube video.
 
         Returns:
+        - video language(str): the language of title
         - transcript (str): The transcript of the video.
         """
         
@@ -143,14 +144,14 @@ class YouTubeVideoSummarizer:
             for lang in langs:
                 try:
                     transcript = transcript_list.find_manually_created_transcript([lang])
-                    return '.'.join(section['text'] for section in transcript.fetch())
+                    return self.video_lang(video_id), '.'.join(section['text'] for section in transcript.fetch())
                 
                 except NoTranscriptFound as e:
                     
                     try:
                         transcript = transcript_list.find_generated_transcript([lang])
                         logging.info(f'Auto-generiert transcript.')
-                        return '.'.join(section['text'] for section in transcript.fetch())  
+                        return self.video_lang(video_id),'.'.join(section['text'] for section in transcript.fetch())  
                     except NoTranscriptFound as e:
                         
                         logging.warning(f'failed to retrieve transcript in {lang}. Try to retrieve transcript in {set(langs).difference(set(lang))}')
@@ -220,7 +221,7 @@ class YouTubeVideoSummarizer:
         return chunks
 
     
-    def summarize_text(self, text,video_id, max_tokens = 200):
+    def summarize_text(self, text,lang, max_tokens = 200):
         """
         Summarize text using OpenAI's GPT model.
 
@@ -233,7 +234,6 @@ class YouTubeVideoSummarizer:
         - summary (str): The summarized text.
         """
         
-        lang = self.video_lang(video_id)
         openai.api_key = self.openai_api_key
     
         content = "Du bist ein hilfreicher Assistent, der Texte zusammenfasst" if lang =="de" \
@@ -303,9 +303,9 @@ if __name__ == "__main__":
     
     video_id = input("Youtube Video ID: ") # video_id is the characters after v= inside the link such as https://www.youtube.com/watch?v=cupU_lyNY2w
     downloader = YouTubeVideoSummarizer()
-    text = downloader.get_transcript(video_id)
+    lang, text = downloader.get_transcript(video_id)
     if text:
-        summarized_text = downloader.summarize_text(text,video_id, max_tokens = 200)
+        summarized_text = downloader.summarize_text(text,lang, max_tokens = 200)
         print(summarized_text)
         # you can also write the summarized transcript to file :
         # downloader.write_to_textfile(video_id,summarized_text)

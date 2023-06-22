@@ -45,10 +45,10 @@ you have to pass your Youtube API Key and OpenAI API Key as parameters to the Yo
 summarizer = YouTubeVideoSummarizer(your Youtube API Key, your OpenAI API Key) 
 
 then 
-transcript = summarizer.get_transcript(video_id)
+lang, transcript = summarizer.get_transcript(video_id)
 
 and afterwards call 
-summary = summarizer.summarize_text(transcript)
+summary = summarizer.summarize_text(transcript,lang)
 
 and if you want to save it to a file ( text or audio file ) 
 
