@@ -16,7 +16,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=['yt_summarizer'],
-    install_requires=[            # I get to this in a second
+    install_requires=[           
           'google-api-python-client',
           'youtube_transcript_api',
           'openai',

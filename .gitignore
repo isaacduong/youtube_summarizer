@@ -3,3 +3,7 @@
 dist/
 youtube_summarizer.egg-info/
 yt_summarizer.egg-info/
+.DS_Store
+.ipynb_checkpoints/
+yt_summarizer/__pycache__
+.gitattributes

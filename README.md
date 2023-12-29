@@ -35,9 +35,9 @@ opportunities.
 
  ## Prerequisites
 
-- Python 3.x
-- Google API Key
-- OpenAI API Key
+- `Python 3.x`
+- `Google API Key` 
+- `OpenAI API Key` 
 
 ## usage 
 you have to pass your Youtube API Key and OpenAI API Key as parameters to the YouTubeVideoSummarizer constructor as following
